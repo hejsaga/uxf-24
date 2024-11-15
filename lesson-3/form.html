@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <title>Interaktivt formulär</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <main>
+        <form aria-labelledby="register-form">
+            <h1>Registreringsformulär</h1>
+
+            <!-- Varför använder vi inte fieldset för följande tre element?
+            Svar: För att det med tydlighet framgår vad deras ändamål är.
+            Vi vill undvika att 'nestla' elementen mer än nödvändigt. -->
+            <label for="username">Användarnamn</label>
+            <input id="username" type="text" name="username" required aria-required="true">
+
+            <label for="email">Epostadress</label>
+            <input id="email" type="email" name="email" required>
+
+            <label for="password">Lösenord</label>
+            <input id="password" type="password" name="password">
+
+            <fieldset>
+                <legend>Intressen</legend>
+                <label><input type="checkbox" value="sport" name="interests" id="sport">Sport</label>
+                <label><input type="checkbox" value="music" name="interests" id="music">Musik</label>
+                <label><input type="checkbox" value="travel" name="interests" id="travel">Resor</label>
+            </fieldset>
+
+            <label for="preference">Preferensnivå</label>
+            <input id="preference" type="range" name="preference" min="0" max="10" step="1" aria-valuemin="0"
+                aria-valuemax="10">
+
+            <label for="color">Favoritfärger</label>
+            <select id="color" name="color">
+                <option value="red">Röd</option>
+                <option value="blue">Blå</option>
+                <option value="yellow">Gul</option>
+            </select>
+
+            <button type="submit">Skicka</button>
+        </form>
+    </main>
+</body>
+
+</html>

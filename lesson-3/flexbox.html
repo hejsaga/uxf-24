@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <title>Flexbox demo</title>
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+
+<!-- TIPS: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ -->
+<!-- CSS flexbox layout -->
+<!-- 1. Flex Container och Flex Items
+Flex Container: Detta är det element som flexbox appliceras på. När du ställer in display: flex på en container, aktiveras flexbox-läget, och alla direkta barn till containern blir flex items.
+Flex Items: Dessa är elementen inom flex-containern som påverkas av flex-egenskaperna. De anpassar sig beroende på de inställningar som görs på containern och deras egna flex-egenskaper. -->
+
+<body>
+
+    <h1>Flexbox demo</h1>
+
+    <div class="container">
+        <h2>1. Flex Row</h2>
+        <p>Elementen placeras i rad med <code>display: flex</code>.</p>
+        <div class="flex-row">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>2. Flex Column</h2>
+        <p>Elementen placeras i kolumn med <code>flex-direction: column</code>.</p>
+        <div class="flex-column">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>3. Centrerad Layout</h2>
+        <p>Elementen centreras både horisontellt och vertikalt.</p>
+        <div class="centered">
+            <div class="box">Centrerad</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>4. Space Between</h2>
+        <p>Elementen får jämnt utrymme mellan sig med <code>justify-content: space-between</code>.</p>
+        <div class="space-between">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>5. Space Around</h2>
+        <p>Elementen får utrymme runt varje sida med <code>justify-content: space-around</code>.</p>
+        <div class="space-around">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>6. Space Evenly</h2>
+        <p>Elementen får jämt fördelat utrymme med <code>justify-content: space-evenly</code>.</p>
+        <div class="space-evenly">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>7. Flex Grow</h2>
+        <p>Elementen växer för att fylla hela radens utrymme med <code>flex-grow: 1</code>.</p>
+        <div class="flex-row flex-grow">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
