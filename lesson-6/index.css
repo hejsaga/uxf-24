@@ -1,0 +1,164 @@
+/* 
+  Genom att använda `box-sizing: border-box` inkluderas både padding och border i elementets totala bredd och höjd. 
+  Detta innebär att om du anger `width: 100px` eller `height: 100px` för ett element, så är det den faktiska 
+  storleken på elementet, inklusive padding och border. Det gör layouten mycket enklare att skapa och mer förutsägbar.
+
+  Utan `box-sizing: border-box` (standard är `content-box`) gäller bredden och höjden endast för elementets innehåll.
+  Padding och border läggs då ovanpå den angivna storleken. Till exempel, om du skriver:
+  
+  div {
+    width: 100px;
+    padding: 10px;
+    border: 5px solid black;
+  }
+
+  ...så blir den totala bredden 130px eftersom:
+  - Bredden för innehållet är 100px.
+  - Padding (10px på varje sida) lägger till 20px (10px * 2).
+  - Border (5px på varje sida) lägger till 10px (5px * 2).
+
+  Detta kan skapa problem när du försöker bygga en exakt layout, eftersom du manuellt måste justera 
+  för padding och border, vilket gör det svårare att hantera särskilt i responsiv design.
+
+  Med `box-sizing: border-box` blir det i stället så här:
+  - Bredden för elementet är fortfarande 100px totalt.
+  - Innehållet justeras automatiskt för att rymma padding och border inom de 100px.
+
+  Genom att sätta `box-sizing: border-box` på alla element förenklar du layoutarbetet och slipper räkna manuellt på varje element. Detta är en vanlig praxis 
+  i modern webbutveckling och rekommenderas starkt för att skapa en mer stabil och förutsägbar design.
+*/
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* background-image: url("https://media.istockphoto.com/id/1459373176/vector/abstract-defocused-background-spring-summer-sea.jpg?s=612x612&w=0&k=20&c=P6D1VrXeeKsJfyKzlJeIqxyNXkeYtMb6C1mW6p68xro=");
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+header,
+footer {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-links,
+.destination-links,
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a,
+.destination-links a,
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.subscribe-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #c463c6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background-color: #d984db;
+}
+
+.popular-destinations {
+  background-color: #c7c5c580;
+  text-align: center;
+  box-shadow: 0px 5px 20px rgba(255, 16, 218, 0.1);
+  border-radius: 8px;
+  /* opacity: 0.5; */
+}
+
+.post {
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0px 5px 20px rgba(255, 16, 218, 0.1);
+  border-radius: 8px;
+  background-color: #f9f9f994;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.popular-destinations {
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-link-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .subscribe-btn {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+
+  main {
+    display: flex;
+    gap: 4rem;
+    margin: 4rem;
+  }
+
+  .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .post {
+    flex: 1 1 200px;
+  }
+
+  .popular-destinations {
+    text-align: left;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
