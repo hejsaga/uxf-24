@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  margin: 2rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(229, 209, 183);
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0.5rem 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* RESPONSIVE GRID */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgb(151, 151, 232);
+  padding: 10px;
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: aquamarine;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* ADVANCED GRID */
+.advanced-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 lika stora kolumner */
+  grid-template-rows: repeat(3, 150px); /* 2 rader, båda är 150px höga */
+  gap: 10px;
+  background-color: rgb(151, 151, 232);
+  padding: 10px;
+}
+
+.grid-1 {
+  grid-column: span 2; /* Sträcker sig över två kolumner */
+  grid-row: span 2; /* Sträcker sig över två rader */
+}
+
+.grid-2 {
+  grid-column: 3;
+  grid-row: span 2;
+}
+
+.grid-3 {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.grid-4 {
+  grid-column: 3;
+  grid-row: span 3;
+}
+
+/* GRID TEMPLATE AREAS */
+.item-a,
+.item-b,
+.item-c,
+.item-d {
+  padding: 1rem;
+}
+
+.item-a {
+  grid-area: header;
+  background-color: hotpink;
+  padding: 3rem;
+}
+
+.item-b {
+  grid-area: main;
+  background-color: greenyellow;
+}
+
+.item-c {
+  grid-area: sidebar;
+  background-color: blueviolet;
+}
+
+.item-d {
+  grid-area: footer;
+  background-color: blue;
+}
+
+.grid-template-areas-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0 1rem;
+  }
+}
