@@ -15,9 +15,9 @@ const fruits = ["Apple", "Banana"];
 const ul = document.getElementById("array-example");
 
 // Iterera över varje frukt i arrayen.
-for (let fruit of fruits) {
+for (const fruit of fruits) {
   // Skapa ett nytt <li>-element för varje frukt.
-  let li = document.createElement("li");
+  const li = document.createElement("li");
 
   // Ställ in texten i <li>-elementet till aktuell frukt.
   li.innerText = fruit;
