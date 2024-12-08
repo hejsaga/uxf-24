@@ -52,15 +52,15 @@ if (age > 20) {
   document.getElementById("if-example").textContent = "You are a baby";
 }
 
-// ---------- USE DYNAMIC INPUT ---------- //
+// ---------- ANVÄND INPUT FRÅN EN ANVÄNDARE ---------- //
 const form = document.getElementById("userForm");
 const inputFieldName = document.getElementById("userInputName");
 const inputFieldAge = document.getElementById("userInputAge");
 const output = document.getElementById("output");
 
 form.addEventListener("submit", (event) => {
-  /* event.preventDefault(); används för att förhindra standardbeteendet för ett specifikt event i webbläsaren.
-  Ett default-beteende för ett submit-event leder vanligtvis till en omladdning av sidan. */
+  // event.preventDefault(); används för att förhindra standardbeteendet för ett specifikt event i webbläsaren.
+  // Ett default-beteende för ett submit-event leder vanligtvis till en omladdning av sidan.
   event.preventDefault();
 
   output.textContent = `Name: ${inputFieldName.value}, Age: ${inputFieldAge.value}`;
