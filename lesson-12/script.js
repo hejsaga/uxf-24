@@ -24,6 +24,7 @@ toggleThemeButton.addEventListener("click", () => {
   const isDarkMode = document.body.classList.contains("dark-mode");
 
   // Om vår body har klassen "dark-mode", ändra texten på knappen. Stylingen hanteras i CSS
+  // Syntaxen nedan kallas för ternary operator
   toggleThemeButton.textContent = isDarkMode
     ? "Byt till Light Mode"
     : "Byt till Dark Mode";
