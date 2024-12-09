@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
+
+.theme-toggle {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3b3b3b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* TODO LIST */
+.todo-section {
+  margin-top: 20px;
+}
+
+.todo-input {
+  padding: 10px;
+  margin-right: 10px;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.add-todo-btn {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.todo-list {
+  width: 40%;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.todo-list li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* THEME TOGGLE STYLES */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+  border-bottom: #333;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  border-bottom: #333;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #80d8ff;
+  color: black;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: #40c4ff;
+}
+
+body.dark-mode .todo-list li {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .add-todo-btn {
+  background-color: #555;
+  color: white;
+  border: none;
+}
+
+body.dark-mode .todo-input {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
