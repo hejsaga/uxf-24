@@ -1,0 +1,46 @@
+Fortsättning av DOM-manipulering: Objekt, if-satser och events
+Mål: Lär dig att hantera objekt, använda if-satser för logik, och skapa dynamiska interaktioner med användarens input.
+
+1. Arbeta med objekt
+Skapa ett objekt och visa dess innehåll
+Skapa ett objekt som representerar en bok med följande egenskaper:
+
+title (sträng)
+author (sträng)
+year (nummer)
+isAvailable (boolean)
+Använd getElementById för att hämta ett <p>-element med id object-example och visa bokens information som text i elementet, t.ex.: "Title: [book title], Author: [book author], Year: [year], Available: [true/false]"
+
+2. Arbeta med events och dynamiskt innehåll
+Uppdatera innehåll baserat på formulärinput
+Uppgift:
+
+Skapa ett formulär med ett textfält samt en knapp för att skicka in formuläret.
+När användaren skickar in formuläret, visa namnet och åldern dynamiskt på sidan genom att använda ett <p>-element med id output.
+
+
+3. Använda if-satser för att skapa logik
+Skapa ett beslut baserat på användarens input
+Uppgift:
+
+Låt användaren skriva in sin ålder i ett input-fält.
+Om åldern är över 18, visa "Du är vuxen", annars visa "Du är minderårig".
+Lägg till en knapp som triggar och hanterar denna logik.
+Extra frivillig utmaning:
+
+Lägg till en kontroll för att se om användaren skriver in ett negativt tal eller ett ogiltigt värde och visa ett felmeddelande.
+
+4. Mer avancerad hantering med objekt och events
+Uppgift:
+
+Skapa ett objekt book som innehåller information om en bok (titel, författare, år, tillgänglighet).
+Lägg till en knapp som när den klickas på, kontrollerar om boken är tillgänglig (baserat på objektets isAvailable-nyckel).
+Om boken är tillgänglig, visa "Boken finns tillgänglig".
+Om boken inte är tillgänglig, visa "Boken är för närvarande utlånad".
+
+Bonusutmaning:
+Lägg till en funktion som låter användaren ändra värdet på isAvailable när de klickar på knappen. Uppdatera meddelandet när tillgängligheten ändras.
+
+
+När du känner dig trygg med dessa övningar kan du börja kombinera objekt, if-satser och events för att skapa mer komplexa och interaktiva webbsidor. Här är några exempel på hur du kan utveckla dina färdigheter:
+Skapa en interaktiv boklista där användaren kan lägga till och ta bort böcker.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boklista</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form id="add-book-form">
+        <label for="book-title">Titel:</label>
+        <input type="text" id="book-title" required>
+        <label for="book-author">Författare:</label>
+        <input type="text" id="book-author" required>
+        <button type="submit">Lägg till bok</button>
+    </form>
+    <ul id="book-list"></ul>
+
+    <script>
+        const form = document.getElementById("add-book-form");
+        const bookList = document.getElementById("book-list");
+    </script>
+</body>
+
+</html>

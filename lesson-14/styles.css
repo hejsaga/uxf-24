@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.theme-toggle {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3b3b3b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.book-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.book-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.book-price {
+  font-size: 1.1rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.book-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.wishlist-btn {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #1e1e1e;
+  border-bottom: #333;
+}
+
+body.dark-mode .footer {
+  background-color: #1e1e1e;
+  border-top: #333;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #80d8ff;
+  color: black;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: #40c4ff;
+}
+
+body.dark-mode .book-list .book-card {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .book-list .book-card h3,
+body.dark-mode .book-list .book-price,
+body.dark-mode .book-list .book-description {
+  color: #e0e0e0;
+}
+
+body.dark-mode .fav-btn {
+  color: #e0e0e0;
+}
+
+body.dark-mode .fav-btn:hover {
+  color: #ff6f61;
+}
+
+/* Book card stuff*/
+
+.read-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.read-toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+.read-toggle-btn.read {
+  background-color: #4caf50; /* Green for read status */
+}
+
+.read-toggle-btn.read:hover {
+  background-color: #388e3c;
+}
+
+/* Adjust the book card to handle positioning */
+.book-card {
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 16px;
+}

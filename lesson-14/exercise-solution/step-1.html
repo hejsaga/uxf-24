@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokobjekt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <p id="object-example"></p>
+
+    <script>
+        const book = {
+            title: "To Kill a Mockingbird",
+            author: "Harper Lee",
+            year: 1960,
+            isAvailable: true
+        };
+
+        const paragraph = document.getElementById("object-example");
+        paragraph.textContent = `Title: ${book.title}, Author: ${book.author}, Year: ${book.year}, IsAvailable: ${book.isAvailable}`
+    </script>
+</body>
+
+</html>

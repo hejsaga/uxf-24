@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokstatus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <p id="book-status"></p>
+    <button id="toggle-availability">Ändra tillgänglighet</button>
+
+    <script>
+        const book = {
+            title: "1984",
+            author: "George Orwell",
+            year: 1949,
+            isAvailable: true
+        };
+
+        const statusElement = document.getElementById("book-status");
+        const button = document.getElementById("toggle-availability");
+
+        const setParagraphContent = () => {
+            // Example with turnary operator, but can be written as an if-else statement like below
+            statusElement.textContent = book.isAvailable ? "Boken finns tillgänglig." : "Boken är för närvarande utlånad."
+
+            /* if (book.isAvailable) {
+                statusElement.textContent = "Boken finns tillgänglig."
+            } else {
+                statusElement.textContent = "Boken är för närvarande utlånad."
+            } */
+        }
+
+        button.addEventListener("click", () => {
+            // Logical NOT operator, commonly used to check/update boolean values
+            book.isAvailable = !book.isAvailable;
+            setParagraphContent() // function call, the code in the function will only be executed when called
+        })
+
+        // Set initial paragraph text, before anything else
+        setParagraphContent() // function call, the code in the function will only be executed when called
+    </script>
+</body>
+
+</html>

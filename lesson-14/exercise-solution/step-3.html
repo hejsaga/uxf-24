@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ålderskontroll</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <label for="user-age">Skriv in din ålder:</label>
+    <input id="user-age">
+    <button id="check-age">Kontrollera</button>
+    <p id="age-result"></p>
+
+    <script>
+        const button = document.getElementById("check-age");
+        const ageResult = document.getElementById("age-result");
+
+        button.addEventListener("click", () => {
+            const age = parseInt(document.getElementById("user-age").value)
+
+            if (isNaN(age)) {
+                ageResult.textContent = "Ogiltig ålder."
+            } else if (age >= 18) {
+                ageResult.textContent = "Du är vuxen"
+            } else {
+                ageResult.textContent = "Du är minderårig"
+            }
+        })
+    </script>
+</body>
+
+</html>
