@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 4rem 5rem;
+}
+
+.button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+th {
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.low-contrast {
+  color: #cccccc;
+  background-color: #eeeeee;
+}
+
+#contact-form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: rgb(71, 5, 5);
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}

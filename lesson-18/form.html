@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/form.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <div id="form-container">
+        <h1>Contact</h1>
+        <form id="contact-form">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                <p id="name-error" class="error hidden">Name is required.</p>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" id="email">
+                <p id="email-error" class="error hidden">Email is required.</p>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message"></textarea>
+                <p id="message-error" class="error hidden">Message is required.</p>
+            </div>
+            <button class="button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('button').addEventListener('click', (e) => {
+            e.preventDefault()
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Note: This is a basic validation approach for demonstration purposes only.
+            // In a real-world application, use more robust validation and better messages. :)
+            if (!name) {
+                document.getElementById('name-error').classList.remove('hidden')
+            } else {
+                document.getElementById('name-error').classList.add('hidden')
+            }
+
+            if (!email) {
+                document.getElementById('email-error').classList.remove('hidden')
+            } else {
+                document.getElementById('email-error').classList.add('hidden')
+            }
+        })
+    </script>
+</body>
+
+</html>
