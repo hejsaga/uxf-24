@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal.open {
+  display: block;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#modal {
+  border-radius: 8px;
+}
+
+.backdrop.open {
+  display: block;
+}
+
+input {
+  padding: 0.3rem;
+  border-radius: 6px;
+  margin: 0.2rem 0rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+  gap: 0.2rem;
+}
+
+#flexed {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+#input {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 0.3rem;
+}

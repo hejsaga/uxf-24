@@ -1,0 +1,13 @@
+För att köra de givna testerna behöver du följande paket i devDependencies:
+
+jest
+Huvudverktyget för att köra testerna. Detta används för att exekvera dina testfiler.
+
+jest-environment-jsdom
+Nödvändig för att använda jsdom-miljön, som efterliknar en webbläsardom i Node.js och krävs för att testa DOM-manipulationer.
+
+@testing-library/dom
+Används för att simulera användarinteraktioner med DOM-element (t.ex. fireEvent), vilket är en central del av dina tester.
+
+@testing-library/jest-dom
+Ger praktiska matchers som .toHaveClass och .toHaveAttribute, vilket gör det enklare att skriva tester som kontrollerar DOM-elementens tillstånd.
