@@ -1,74 +1,49 @@
 * {
+  font-family: "Arial", sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
   margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
+  color: #90caf9;
 }
 
 ul {
   padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
+  color: #b0bec5;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #1e1e1e;
+  border: 1px solid #37474f;
+  color: #90caf9;
   float: left;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
+  line-height: 50px;
+  height: 50px;
+  margin: 0;
   text-align: center;
-  width: 34px;
+  width: 50px;
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #263238;
+  cursor: pointer;
 }
 
 .board-row:after {
@@ -79,25 +54,36 @@ body {
 
 .status {
   margin-bottom: 10px;
-}
-.game {
-  display: flex;
-  flex-direction: row;
+  color: #b0bec5;
 }
 
-.game-info {
-  margin-left: 20px;
+.game {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  gap: 20px;
+}
+
+.game-board {
+  width: 200px;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   gap: 5px;
+  background-color: #263238;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-.square {
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  text-align: center;
+button {
+  background-color: transparent;
+  color: #90caf9;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
