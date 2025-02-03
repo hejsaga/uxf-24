@@ -1,0 +1,159 @@
+* {
+  font-family: "Arial", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  margin-top: 0;
+  color: #90caf9;
+}
+
+ul {
+  padding-inline-start: 20px;
+  color: #b0bec5;
+}
+
+.square {
+  background: #1e1e1e;
+  border: 1px solid #37474f;
+  color: #90caf9;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 50px;
+  height: 50px;
+  margin: 0;
+  text-align: center;
+  width: 50px;
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #263238;
+  cursor: pointer;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  color: #b0bec5;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  gap: 20px;
+}
+
+.game-board {
+  width: 200px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  background-color: #263238;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+button {
+  background-color: transparent;
+  color: #90caf9;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-list {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-item {
+  display: inline-block;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #90caf9;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar-link:hover {
+  color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+/* Pokemon list */
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #007bff;
+}
