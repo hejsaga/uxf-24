@@ -19,6 +19,11 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
+        <li className="navbar-item">
+          <Link to="/pokemons" className="navbar-link">
+            Pokémons
+          </Link>
+        </li>
       </ul>
     </nav>
   );
