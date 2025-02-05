@@ -1,0 +1,16 @@
+Varför state & useEffect löser problem idag
+🔹 Färre rader kod och enklare syntax
+
+Funktionskomponenter med Hooks kräver mindre kod än klasskomponenter.
+Ingen constructor, this, eller separata livscykelmetoder behövs.
+🔹 Tydligare och mer deklarativt
+
+Vi behöver inte tänka på när exakt en metod ska anropas – React hanterar det åt oss.
+useEffect gör det tydligare när något ska ske (vid mount, update eller unmount).
+🔹 Återanvändbar logik med custom hooks
+
+Istället för att upprepa kod i olika klasskomponenter kan vi skapa egna Hooks.
+🔹 Undviker problem med this och bindningar
+
+I klasskomponenter var vi ofta tvungna att binda metoder i konstruktorn.
+I funktionskomponenter används useState och useEffect utan detta problem.
