@@ -11,6 +11,7 @@ const LoginForm = () => {
 
     if (!isLogin && password !== confirmPassword) {
       alert("Lösenorden matchar inte");
+      return;
     }
 
     const mode = isLogin ? "Login" : "Register";
