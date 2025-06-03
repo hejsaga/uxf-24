@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../firebase/firebase-config";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!isLogin && password !== confirmPassword) {
@@ -14,8 +20,15 @@ const LoginForm = () => {
       return;
     }
 
-    const mode = isLogin ? "Login" : "Register";
-    console.log(`${mode} submitted:`, { email, password });
+    try {
+      if (isLogin) {
+        await signInWithEmailAndPassword(auth, email, password);
+      } else {
+        await createUserWithEmailAndPassword(auth, email, password);
+      }
+    } catch {
+      setError("Fel användarnamn eller lösenord");
+    }
   };
 
   return (
@@ -56,6 +69,7 @@ const LoginForm = () => {
         )}
 
         <button type="submit">{isLogin ? "Logga in" : "Registrera"}</button>
+        {error && <p className="error-text">{error}</p>}
 
         <p className="toggle-text">
           {isLogin ? "Har du inget konto?" : "Har du redan ett konto?"}
