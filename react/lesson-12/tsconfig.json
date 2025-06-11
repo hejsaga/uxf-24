@@ -11,6 +11,8 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "components/LoginForm.jsx"
+    "components/LoginForm.tsx",
+    "app.config.js",
+    "app.config.js"
   ]
 }

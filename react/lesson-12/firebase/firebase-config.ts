@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import Constants from "expo-constants";
+import { CustomExpoConfig } from "@/app.config";
+
 const {
   firebaseApiKey,
   firebaseAuthDomain,
@@ -9,7 +11,7 @@ const {
   firebaseStorageBucket,
   firebaseMessagingSenderId,
   firebaseAppId,
-} = Constants.expoConfig.extra;
+} = (Constants.expoConfig as CustomExpoConfig)?.extra || {};
 
 // Your web app's Firebase configuration
 const firebaseConfig = {

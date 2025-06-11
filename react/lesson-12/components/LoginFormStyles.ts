@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
   toggleTextWhite: {
     color: "white",
   },
+  disabledButton: {
+    backgroundColor: "gray",
+    color: "white",
+  },
 });
 
 export default styles;

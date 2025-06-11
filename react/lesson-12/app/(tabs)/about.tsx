@@ -1,11 +1,9 @@
 import { Image } from "expo-image";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedView } from "@/components/ThemedView";
 
-import LoginForm from "@/components/LoginForm"; // Absolut import med alias
-
-export default function HomeScreen() {
+export default function About() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
@@ -17,7 +15,7 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <LoginForm />
+        <Text>About</Text>
       </ThemedView>
     </ParallaxScrollView>
   );

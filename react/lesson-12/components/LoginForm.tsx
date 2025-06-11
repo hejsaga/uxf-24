@@ -7,6 +7,7 @@ import {
 import { auth } from "../firebase/firebase-config";
 
 import styles from "./LoginFormStyles"; // Relativ sökväg till LoginFormStyles, till skillnad från absoluta importer med alias @
+import { useRouter, Link } from "expo-router";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -14,10 +15,10 @@ const LoginForm = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
   const [error, setError] = useState("");
+  const isFormValid = email.trim() !== "" && password.trim() !== "";
+  const router = useRouter();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     if (!isLogin && password !== confirmPassword) {
       alert("Lösenorden matchar inte");
       return;
@@ -26,8 +27,10 @@ const LoginForm = () => {
     try {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
+        router.push("/explore");
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
+        router.push("/explore");
       }
     } catch {
       setError("Fel användarnamn eller lösenord");
@@ -38,13 +41,16 @@ const LoginForm = () => {
     <View style={styles.container}>
       <Text style={styles.title}>{isLogin ? "Logga in" : "Skapa konto"}</Text>
 
+      <Link href="/about">About</Link>
+
       <Text style={styles.label}>E-post</Text>
       <TextInput
         style={styles.input}
         keyboardType="email-address"
         value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        required
+        // React Native's TextInput använder onChangeText som direkt skickar in sträng-värdet från inputen
+        // till skillnad från web React där du behöver extrahera strängen via event.target.value.
+        onChangeText={setEmail}
       />
 
       <Text style={styles.label}>Lösenord</Text>
@@ -52,8 +58,7 @@ const LoginForm = () => {
         style={styles.input}
         secureTextEntry
         value={password}
-        onChange={(event) => setPassword(event.target.value)}
-        required
+        onChangeText={setPassword}
       />
 
       {!isLogin && (
@@ -63,15 +68,18 @@ const LoginForm = () => {
             style={styles.input}
             secureTextEntry
             value={confirmPassword}
-            onChange={(event) => setConfirmPassword(event.target.value)}
-            required
+            onChangeText={setConfirmPassword}
           />
         </>
       )}
 
       {error && <Text style={styles.error}>{error}</Text>}
 
-      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+      <TouchableOpacity
+        style={[styles.button, !isFormValid && styles.disabledButton]}
+        onPress={handleSubmit}
+        disabled={!isFormValid}
+      >
         <Text style={styles.buttonText}>
           {isLogin ? "Logga in" : "Registrera"}
         </Text>
@@ -81,7 +89,7 @@ const LoginForm = () => {
         <Text style={styles.toggleTextWhite}>
           {isLogin ? "Har du inget konto?" : "Har du redan ett konto?"}
         </Text>
-        <TouchableOpacity type="button" onPress={() => setIsLogin(!isLogin)}>
+        <TouchableOpacity onPress={() => setIsLogin(!isLogin)}>
           <Text style={styles.toggleText}>
             {isLogin ? "Registrera dig här" : "Logga in här"}
           </Text>
